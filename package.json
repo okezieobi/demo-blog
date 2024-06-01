@@ -1,0 +1,54 @@
+{
+  "name": "demo-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "release": "npm run build && npm run start",
+    "build": "npx tsc",
+    "test": "jest",
+    "test:single": "cross-env NODE_ENV=testing jest tests/**/*.spec.ts",
+    "coverage": "npm run test -- '--coverage'",
+    "coverage:codacy": "npm run coverage && cp -R coverage .github/workflows/coverage/",
+    "test:ci": "cross-env NODE_ENV=testing-ci jest '--runInBand'",
+    "coverage:ci": "npm run test:ci -- '--coverage'",
+    "coverage:codacy:ci": "npm run coverage:ci && cp -R coverage .github/workflows/coverage/",
+    "dev": "cross-env NODE_ENV=development DEBUG=demo-blog:* nodemon ./src/app/index.ts",
+    "start": "pm2-runtime start pm2.config.js --env production",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "debug": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "morgan": "latest",
+    "pm2": "latest"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/debug": "latest",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "cross-env": "latest",
+    "eslint": "^8.38.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "nodemon": "latest",
+    "prettier": "2.8.7",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.ts": "eslint --cache --fix",
+    "*.{js,ts,css,md}": "prettier --write"
+  }
+}
