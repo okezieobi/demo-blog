@@ -41,8 +41,8 @@ export class BlogService {
     return data;
   }
 
-  update() {
-    const { id } = BlogIdSchema.parse(this.arg);
+  update(filter: unknown) {
+    const { id } = BlogIdSchema.parse(filter);
     const input = BlogSchema.parse(this.arg);
     const data = this.getByAuthor(id, input.author);
     data.content = input.content;
