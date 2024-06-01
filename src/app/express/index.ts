@@ -40,5 +40,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-// const dev = "http://localhost:5000/api/v1";
-// const auth = `Bearer token`
+// const dev = "http://localhost:5000/api";
