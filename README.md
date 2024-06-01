@@ -36,7 +36,7 @@ npm start
 Start app in development at `http://localhost:5000/`:
 
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 
