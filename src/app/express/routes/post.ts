@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { BlogService } from "../../../libraries";
+import { PostService } from "../../../libraries";
 
-export const blogRouter = Router();
+export const postRouter = Router();
 
-blogRouter
+postRouter
   .route("/")
   .post((req, res, next) => {
     try {
-      const data = new BlogService(req.body).insert();
+      const data = new PostService(req.body).insert();
       res.status(201).send(data);
     } catch (error) {
       next(error);
@@ -15,18 +15,18 @@ blogRouter
   })
   .get((req, res, next) => {
     try {
-      const data = new BlogService({}).list();
+      const data = new PostService({}).list();
       res.status(200).send(data);
     } catch (error) {
       next(error);
     }
   });
 
-blogRouter
+postRouter
   .route("/:id")
   .get((req, res, next) => {
     try {
-      const data = new BlogService(req.params).get();
+      const data = new PostService(req.params).get();
       res.status(200).send(data);
     } catch (error) {
       next(error);
@@ -34,7 +34,7 @@ blogRouter
   })
   .patch((req, res, next) => {
     try {
-      const data = new BlogService(req.body).update(req.params);
+      const data = new PostService(req.body).update(req.params);
       res.status(200).send(data);
     } catch (error) {
       next(error);
@@ -42,7 +42,7 @@ blogRouter
   })
   .delete((req, res, next) => {
     try {
-      new BlogService(req.params).delete();
+      new PostService(req.params).delete();
       res.sendStatus(204);
     } catch (error) {
       next(error);
