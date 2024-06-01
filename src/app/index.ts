@@ -1,7 +1,6 @@
 /**
  * Module dependencies.
  */
-import "dotenv/config";
 
 import debugModule from "debug";
 import { createServer } from "http";

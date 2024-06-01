@@ -16,7 +16,6 @@
   "dependencies": {
     "cors": "latest",
     "debug": "latest",
-    "dotenv": "latest",
     "express": "latest",
     "morgan": "latest",
     "pm2": "latest",
@@ -30,7 +29,6 @@
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "cross-env": "latest",
     "eslint": "^8.38.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",

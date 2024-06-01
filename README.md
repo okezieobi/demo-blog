@@ -16,20 +16,20 @@ https://documenter.getpostman.com/view/24438561/2sA3QwbVKW
 Install dependencies:
 
 ```bash
-$ npm install
+npm install
 ```
 
 Build the app:
 
 ```bash
-$ npm run build
+npm run build
 ```
 
 
 Start app in production mode at `http://localhost:5000/`:
 
 ```bash
-$ npm start
+npm start
 ```
 
 
