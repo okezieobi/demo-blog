@@ -7,16 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rm -rf dist",
     "release": "npm run build && npm run start",
     "build": "npx tsc",
-    "test": "jest",
-    "test:single": "cross-env NODE_ENV=testing jest tests/**/*.spec.ts",
-    "coverage": "npm run test -- '--coverage'",
-    "coverage:codacy": "npm run coverage && cp -R coverage .github/workflows/coverage/",
-    "test:ci": "cross-env NODE_ENV=testing-ci jest '--runInBand'",
-    "coverage:ci": "npm run test:ci -- '--coverage'",
-    "coverage:codacy:ci": "npm run coverage:ci && cp -R coverage .github/workflows/coverage/",
     "dev": "cross-env NODE_ENV=development DEBUG=demo-blog:* nodemon ./src/app/index.ts",
     "start": "pm2-runtime start pm2.config.js --env production",
     "prepare": "husky install"
