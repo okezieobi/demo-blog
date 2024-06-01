@@ -8,7 +8,6 @@ import { createServer } from "http";
 
 import { app } from "./express";
 
-
 const debug = debugModule("demo-blog:server");
 
 /**
@@ -89,5 +88,6 @@ function onListening() {
  * Listen on provided port, on all network interfaces.
  */
 server.listen(port);
-      server.on("error", onError);
-      server.on("listening", onListening);
+
+server.on("error", onError);
+server.on("listening", onListening);
