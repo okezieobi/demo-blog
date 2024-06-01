@@ -13,5 +13,5 @@ export interface PostSchema extends z.infer<typeof PostSchema> {
 }
 
 export const PostIdSchema = z.object({
-  id: z.string(),
+  postId: z.string(),
 });

@@ -23,7 +23,7 @@ postRouter
   });
 
 postRouter
-  .route("/:id")
+  .route("/:postId")
   .get((req, res, next) => {
     try {
       const data = new PostService(req.params).get();
@@ -32,7 +32,7 @@ postRouter
       next(error);
     }
   })
-  .patch((req, res, next) => {
+  .put((req, res, next) => {
     try {
       const data = new PostService(req.body).update(req.params);
       res.status(200).send(data);
@@ -42,7 +42,7 @@ postRouter
   })
   .delete((req, res, next) => {
     try {
-      new PostService(req.params).delete();
+      new PostService(req.body).delete(req.params);
       res.sendStatus(204);
     } catch (error) {
       next(error);
