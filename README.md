@@ -13,7 +13,7 @@ https://documenter.getpostman.com/view/24438561/2sA3QwbVKW
 [![Windows Build][appveyor-image]][appveyor-url]
 
 
-Install dependencies:
+Install dependencies after cloning repo:
 
 ```bash
 npm install
