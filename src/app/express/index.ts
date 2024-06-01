@@ -26,7 +26,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
       data: result.details?.data ?? null,
     };
     res.status(result.details?.code ?? 500).send(response);
-    console.log(err);
   } catch (error) {
     next(error);
   }
